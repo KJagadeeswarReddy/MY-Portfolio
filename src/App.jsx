@@ -11,6 +11,8 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
+import Testimonials from "./Components/Testimonials";
+import Blog from "./Components/Blog"; // Import Blog
 
 import "./styles.css";
 
@@ -36,7 +38,7 @@ const siteProps = {
 };
 
 const primaryColor = "#4E567E";
-const secondaryColor = "#D2F1E4";
+// const secondaryColor = "#D2F1E4"; // Removed as it's not used
 
 const App = () => {
   return (
@@ -45,6 +47,8 @@ const App = () => {
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Portfolio />
+      <Testimonials />
+      <Blog /> {/* Add Blog component here */}
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>
   );

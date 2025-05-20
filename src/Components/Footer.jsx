@@ -9,6 +9,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
+import ContactForm from "./ContactForm"; // Import ContactForm
 
 import devDotToIcon from "../images/socials/devdotto.svg";
 import envelopeIcon from "../images/socials/envelope.svg";
@@ -36,6 +37,7 @@ const Footer = (props) => {
     medium,
     name,
     primaryColor,
+    // secondaryColor, // Removed as it's not used
     twitter,
     youTube,
   } = props;
@@ -43,16 +45,20 @@ const Footer = (props) => {
   return (
     <div
       id="footer"
+      // The main footer container, keeping its ID for the nav link.
+      // Styles might need adjustment if ContactForm has its own full-width background.
+      // For now, ContactForm will be a card within this footer's background.
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "2.5rem",
-        padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
-        width: "100vw"
+        gap: "2.5rem", // This gap will apply between ContactForm and the social icons div
+        padding: "3rem 0 3rem", // Adjusted padding to be more consistent
+        backgroundColor: primaryColor, // The footer retains its background color
+        width: "100%" // Changed from 100vw to 100% for better box model behavior
       }}
     >
+      <ContactForm /> {/* Render the ContactForm component here */}
       <div
         style={{
           display: "flex",
@@ -62,17 +68,17 @@ const Footer = (props) => {
       >
         {email && (
           <a href={`mailto:${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon" />
+            <img src={envelopeIcon} alt="Email Icon" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {devDotTo && (
           <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
-            <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
+            <img src={devDotToIcon} alt="Dev.to Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {gitHub && (
           <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
+            <img src={gitHubIcon} alt="GitHub Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {instagram && (
@@ -81,7 +87,7 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
+            <img src={instagramIcon} alt="Instagram Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {linkedIn && (
@@ -90,17 +96,17 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
+            <img src={linkedInIcon} alt="LinkedIn Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {medium && (
           <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
+            <img src={mediumIcon} alt="Medium Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {twitter && (
           <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon" />
+            <img src={twitterIcon} alt="Twitter Profile" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
         {youTube && (
@@ -109,7 +115,7 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
+            <img src={youTubeIcon} alt="YouTube Channel" className="socialIcon" /> {/* Updated alt text */}
           </a>
         )}
       </div>
@@ -133,6 +139,7 @@ Footer.propTypes = {
   medium: PropTypes.string,
   name: PropTypes.string.isRequired,
   primaryColor: PropTypes.string,
+  // secondaryColor: PropTypes.string, // Removed as it's not used
   twitter: PropTypes.string,
   youTube: PropTypes.string,
 

@@ -123,3 +123,699 @@ img.socialIcon {
   height: 30px;
   width: 30px;
 }
+
+/* Header Styles */
+.header {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column; /* Mobile first - stack links vertically */
+  align-items: center;
+  gap: 0.5rem; /* Reduced gap for mobile */
+}
+
+.header a {
+  color: #333; /* Darker text color */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+  background-color: #e9ecef; /* Light hover effect */
+  color: #007bff; /* Blue hover text color */
+}
+
+/* Home Section Styles */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem; /* Add some padding */
+}
+
+.home-text {
+  color: #fff; /* White text for better contrast on image */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem; /* Space between text and arrow */
+}
+
+.home-text h1 {
+  font-size: 3rem; /* Adjusted font size */
+  margin-bottom: 0.5rem;
+}
+
+.home-text h2 {
+  font-size: 1.5rem; /* Adjusted font size */
+  font-weight: 300; /* Lighter font weight for title */
+}
+
+.home-arrow {
+  bottom: 2rem; /* Adjusted position */
+  /* Centering handled by flexbox in home-section */
+}
+
+.home-arrow img {
+  height: 2.5rem; /* Adjusted size */
+  width: 2.5rem;
+}
+
+
+/* Medium screens (tablets, etc.) */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row; /* Links in a row for larger screens */
+    justify-content: center;
+    gap: 2rem; /* Restore original gap */
+  }
+
+  .home-text {
+    max-width: 600px; /* Limit width of text container */
+  }
+
+  .home-text h1 {
+    font-size: 4rem; /* Increase font size for larger screens */
+  }
+
+  .home-text h2 {
+    font-size: 2rem; /* Increase font size for larger screens */
+  }
+
+  .home-arrow {
+    bottom: 3rem; /* Restore original bottom position */
+  }
+
+  .home-arrow img {
+    height: 3rem; /* Restore original size */
+    width: 3rem;
+  }
+}
+
+/* Contact Form Section Styles */
+.contact-form-section {
+  background-color: #f4f7f6; /* A light, neutral background */
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.contact-form-section h3 {
+  font-size: 2rem; /* Match other section headings */
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-form-section p {
+  color: #555;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form-section form {
+  max-width: 700px; /* Max width for the form */
+  margin: 0 auto; /* Center the form */
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align form elements to the left */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+  width: 100%;
+  padding: 0.875rem; /* 14px padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box; /* Ensure padding doesn't increase width */
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-section input[type="text"]:focus,
+.contact-form-section input[type="email"]:focus,
+.contact-form-section textarea:focus {
+  border-color: #007bff; /* Highlight focus with theme color */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.25); /* Subtle focus shadow */
+}
+
+.contact-form-section textarea {
+  resize: vertical; /* Allow vertical resize, disable horizontal */
+  min-height: 120px;
+}
+
+.contact-form-section .submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background-color: #007bff; /* Theme primary color */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-section .submit-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive adjustments for the form */
+@media (min-width: 768px) {
+  .contact-form-section {
+    padding: 4rem 2rem;
+  }
+  .contact-form-section form {
+    padding: 3rem;
+  }
+}
+
+/* Blog Section Styles */
+.blog-section {
+  background-color: #ffffff; /* White background */
+  padding: 3rem 1rem; /* Responsive padding */
+  text-align: center;
+}
+
+.blog-section h2 {
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 2rem; /* Gap between blog post items */
+  max-width: 1200px; /* Max width for the grid */
+  margin: 0 auto; /* Center the grid */
+  text-align: left; /* Align text to the left within grid items */
+}
+
+.blog-post-item {
+  background-color: #fdfdfd; /* Slightly off-white for cards */
+  border: 1px solid #eee; /* Subtle border */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.blog-post-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Darker title color */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-date {
+  font-size: 0.85rem;
+  color: #777; /* Lighter color for date */
+  margin-bottom: 1rem;
+}
+
+.blog-post-snippet {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Allow snippet to take available space */
+}
+
+.blog-read-more {
+  display: inline-block;
+  font-weight: 500;
+  color: #007bff; /* Theme color for link */
+  text-decoration: none;
+  padding: 0.5rem 0; /* Minimal padding, as it's a text link */
+  align-self: flex-start; /* Align link to the start of the flex item */
+  transition: color 0.3s ease;
+}
+
+.blog-read-more:hover {
+  color: #0056b3; /* Darker shade on hover */
+  text-decoration: underline;
+}
+
+/* Medium screens (tablets, etc.) */
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+  .blog-section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Large screens (desktops, etc.) */
+@media (min-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+  }
+
+  .header {
+    padding: 1rem 2rem; /* Add more padding for larger screens */
+  }
+
+  .home-text h1 {
+    font-size: 5rem; /* Further increase font size */
+  }
+
+  .about-content {
+    max-width: 60%; /* Further restrict width on large screens */
+    padding: 4rem;
+  }
+
+  .portfolio-grid-container {
+    max-width: 80%; /* Container for portfolio section */
+  }
+  
+  .portfolio-projects-grid {
+     /* If two columns of projects are desired on larger screens beside the image */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* About Section Styles */
+.about-section {
+  text-align: center;
+  padding: 3rem 1rem; /* Responsive padding */
+}
+
+.about-content {
+  background-color: #fdfdfd; /* Slightly off-white */
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+}
+
+.about-content h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.about-content hr {
+  border: 0;
+  height: 1px;
+  background-color: #eee;
+  margin: 2rem 0;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0; /* Adjusted margin */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 1rem;
+  text-align: left;
+}
+
+.skills-list li {
+  background-color: #f0f0f0;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem; /* Adjusted font size */
+}
+
+.about-content p {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+  text-align: center;
+  padding: 3rem 1rem; /* Responsive padding */
+}
+
+.portfolio-section h2 {
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.portfolio-grid-container {
+  display: flex;
+  flex-direction: column; /* Mobile: image stacks on top of projects */
+  align-items: center; /* Center items in column layout */
+  gap: 2rem;
+}
+
+.portfolio-image-column {
+  width: 100%;
+  max-width: 450px; /* Max width for the image on mobile */
+  margin-bottom: 1rem; /* Space below image on mobile */
+}
+
+.portfolio-image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Re-styling .container for portfolio projects grid specifically */
+.portfolio-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 90%; /* Max width on mobile */
+  margin: 0 auto;
+}
+
+.portfolio-projects-grid .box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-projects-grid .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-projects-grid .box h3 {
+  font-size: 1.2rem;
+  color: #007bff; /* Use a theme color for links/titles */
+  margin-top: 0; /* Remove default margin if any */
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-projects-grid .box p.small {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.portfolio-projects-grid .box a {
+  text-decoration: none; /* Ensure no underline from global 'a' if not desired */
+}
+
+.portfolio-projects-grid .box a:hover h3 {
+  text-decoration: underline; /* Underline title on hover for better affordance */
+}
+
+
+/* Medium screens (tablets, etc.) */
+@media (min-width: 768px) {
+  .about-content {
+    max-width: 70%;
+    padding: 3rem;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for skills */
+    margin: 2rem 3rem; /* Restore original margin */
+  }
+  
+  .portfolio-grid-container {
+    flex-direction: row; /* Image and projects side-by-side */
+    align-items: flex-start; /* Align items to the top */
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .portfolio-image-column {
+    flex-basis: 40%; /* Image takes 40% of the width */
+    max-width: none; /* Remove mobile max-width */
+    margin-bottom: 0;
+  }
+
+  .portfolio-projects-grid {
+    flex-basis: 60%; /* Projects take 60% of the width */
+    max-width: none; /* Remove mobile max-width */
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); If we want more flexible columns */
+    grid-template-columns: 1fr; /* Single column of projects next to image */
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-content {
+    max-width: 800px; /* Fixed max width for very large screens */
+  }
+  .portfolio-grid-container {
+    max-width: 1100px; /* Fixed max width for portfolio section */
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 90%;
+  max-width: 600px; /* Max width of modal */
+  max-height: 80vh; /* Max height */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.modal-project-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-project-link:hover {
+  background-color: #0056b3;
+  color: white; /* Ensure text color remains white on hover */
+}
+
+
+/* Filter Placeholder Styles */
+.filter-placeholder {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.filter-placeholder select,
+.filter-placeholder button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Portfolio Skills Section Styles */
+.portfolio-skills-section {
+  margin: 2rem auto 3rem; /* Margin top and bottom */
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* Light background for the section */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: center;
+  max-width: 90%;
+}
+
+.portfolio-skills-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem; /* Gap between skill items */
+}
+
+.portfolio-skill-item {
+  background-color: #007bff; /* Theme color for skills */
+  color: white;
+  padding: 0.5rem 1rem; /* Padding for the skill item */
+  border-radius: 20px; /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-skill-item:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Adjustments for project cards to act as modal triggers */
+.portfolio-projects-grid .box {
+  cursor: pointer; /* Indicate clickable items */
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+  background-color: #f0f8ff; /* AliceBlue or a similar light, pleasant color */
+  padding: 3rem 1rem; /* Responsive padding */
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 2rem;
+  max-width: 1200px; /* Max width for the grid */
+  margin: 0 auto; /* Center the grid */
+}
+
+.testimonial-item {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2.5rem; /* Space for quote mark */
+}
+
+.testimonial-quote::before {
+  content: "“"; /* Opening quote mark */
+  position: absolute;
+  left: 0;
+  top: -0.5rem; /* Adjust as needed */
+  font-size: 3rem; /* Large quote mark */
+  color: #007bff; /* Theme color for quote mark */
+  line-height: 1;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+  text-align: right;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: right;
+}
+
+/* Medium screens (tablets, etc.) */
+@media (min-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+  .testimonials-section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Large screens (desktops, etc.) */
+@media (min-width: 992px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+  }
+}
